@@ -1,0 +1,33 @@
+{
+  "name": "fmus-post-project",
+  "version": "0.0.1",
+  "description": "FMUS-POST: A modern, human-centered API testing toolkit",
+  "private": true,
+  "workspaces": [
+    "fmus-core/bindings/ts",
+    "fmus-ui-tauri",
+    "fmus-cli"
+  ],
+  "scripts": {
+    "build": "node scripts/build-all.js",
+    "build:ui": "node scripts/build-all.js --with-ui",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "api",
+    "testing",
+    "http",
+    "rest",
+    "graphql",
+    "websocket",
+    "grpc"
+  ],
+  "author": "FMUS Team",
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

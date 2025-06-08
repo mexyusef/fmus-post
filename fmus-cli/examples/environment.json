@@ -1,0 +1,9 @@
+{
+  "name": "Development Environment",
+  "variables": {
+    "baseUrl": "https://jsonplaceholder.typicode.com",
+    "userId": "2",
+    "apiKey": "test-api-key",
+    "timeout": "5000"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Example API Collection",
+  "description": "A collection of example API requests",
+  "variables": {
+    "baseUrl": "https://jsonplaceholder.typicode.com",
+    "userId": "1"
+  },
+  "requests": [
+    {
+      "name": "Get User",
+      "method": "GET",
+      "url": "{{baseUrl}}/users/{{userId}}",
+      "tests": [
+        {
+          "name": "Status should be 200",
+          "type": "status",
+          "assertion": "equals",
+          "value": 200
+        },
+        {
+          "name": "Response time should be less than 5000ms",
+          "type": "responseTime",
+          "assertion": "lessThan",
+          "value": 5000
+        },
+        {
+          "name": "User ID should exist in response",
+          "type": "body",
+          "assertion": "exists",
+          "path": "id"
+        }
+      ]
+    },
+    {
+      "name": "Get User Posts",
+      "method": "GET",
+      "url": "{{baseUrl}}/users/{{userId}}/posts",
+      "tests": [
+        {
+          "name": "Status should be 200",
+          "type": "status",
+          "assertion": "equals",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "name": "Create Post",
+      "method": "POST",
+      "url": "{{baseUrl}}/posts",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Test Post",
+        "body": "This is a test post",
+        "userId": "{{userId}}"
+      },
+      "tests": [
+        {
+          "name": "Status should be 201",
+          "type": "status",
+          "assertion": "equals",
+          "value": 201
+        },
+        {
+          "name": "Title should exist in response",
+          "type": "body",
+          "assertion": "exists",
+          "path": "title"
+        }
+      ]
+    }
+  ]
+} 

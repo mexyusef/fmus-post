@@ -1,0 +1,49 @@
+[package]
+name = "fmus-core"
+version = "0.0.1"
+edition = "2021"
+description = "Core library for FMUS-POST API testing toolkit"
+authors = ["Yusef Ulum"]
+license = "MIT"
+
+[lib]
+name = "fmus_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# HTTP client
+reqwest = { version = "0.11", features = ["json", "stream", "multipart"] }
+# JSON support
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+futures-util = "0.3"
+# WebSocket
+tokio-tungstenite = { version = "0.19", features = ["native-tls"] }
+# GraphQL
+graphql_client = "0.12"
+# Utilities
+url = "2.3"
+uuid = { version = "1.3", features = ["v4", "serde"] }
+log = "0.4"
+thiserror = "1.0"
+wasm-bindgen = "0.2"
+once_cell = "1.17"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockito = "1.1"
+rand = "0.8"
+
+[features]
+default = ["http", "ws", "graphql"]
+http = []
+ws = []
+graphql = []
+grpc = []
+wasm = ["wasm-bindgen/enable-interning"]
+
+[package.metadata.docs.rs]
+features = ["http", "ws", "graphql", "grpc"]
+rustdoc-args = ["--cfg", "docsrs"]

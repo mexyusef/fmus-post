@@ -1,0 +1,63 @@
+{
+  "name": "fmus-post",
+  "version": "0.0.1",
+  "description": "TypeScript bindings for FMUS-POST API testing toolkit",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "api",
+    "testing",
+    "http",
+    "rest",
+    "graphql",
+    "websocket",
+    "grpc"
+  ],
+  "author": "FMUS Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "graphql": "^16.8.0",
+    "graphql-request": "^6.1.0",
+    "ws": "^8.13.0",
+    "socket.io-client": "^4.7.2",
+    "mqtt": "^5.0.5",
+    "js-yaml": "^4.1.0",
+    "jsonpath-plus": "^7.2.0",
+    "ajv": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/js-yaml": "^4.0.6",
+    "@types/node": "^20.6.0",
+    "@types/ws": "^8.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}
