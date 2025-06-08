@@ -108,13 +108,3 @@ The desktop application provides a user-friendly interface for:
 ## License
 
 MIT
-
-# bangun global cli
-npm run build && cd .. && npm run build && npm install -g ./dist/packages/cli
-
-fmus-post collection ./dist/packages/cli/dist/examples/collection.json -e ./dist/packages/cli/dist/examples/environment.json
-
-fmus-post request get https://jsonplaceholder.typicode.com/users
-
-
-cd C:\projects\fmustools-rework\fmus-post\fmus-ui-tauri && npm run dev
